@@ -70,7 +70,7 @@ clientSocket.send(msg.encode())
 clientSocket.send(endmsg.encode())
    # Fill in start
 
-recv_msg = clientSocket.recv(1024).decode()
+recv_msg = clientSocket.recv(1024)
 #print(recv_msg.decode())
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
