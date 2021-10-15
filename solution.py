@@ -20,7 +20,7 @@ clientSocket.connect(('127.0.0.1', 1025))
 
    # Fill in end
 
-recv = clientSocket.recv(1025)
+recv = clientSocket.recv(1024)
 #print(recv)
 #if recv[:3] != '220':
        #print('220 reply not received from server.')
@@ -28,16 +28,16 @@ recv = clientSocket.recv(1025)
    # Send HELO command and print server response.
 heloCommand = 'HELO Alice\r\n'
 clientSocket.send(heloCommand.encode())
-recv1 = clientSocket.recv(1025).decode()
+recv1 = clientSocket.recv(1024).decode()
 #print(recv1)
 #if recv1[:3] != '250':
        #print('250 reply not received from server.')
        #print('250 reply not received from server')
    # Send MAIL FROM command and print server response.
    # Fill in start
-mailFrom = "MAIL FROM: <sf3809@nyu.edu> \r\n"
+mailFrom = "MAIL FROM: <sf3809@nyu.edu>\r\n"
 clientSocket.send(mailFrom.encode())
-recv2 = clientSocket.recv(1025)
+recv2 = clientSocket.recv(1024).decode()
 #print(recv2)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
@@ -46,9 +46,9 @@ recv2 = clientSocket.recv(1025)
 
    # Send RCPT TO command and print server response.
    # Fill in start
-rcptTo = "RCPT TO: <selomef@gmail.com> \r\n"
+rcptTo = "RCPT TO: <selomef@gmail.com>\r\n"
 clientSocket.send(rcptTo.encode())
-recv3 = clientSocket.recv(1025)
+recv3 = clientSocket.recv(1024).decode()
 #print(recv3)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
@@ -59,7 +59,7 @@ recv3 = clientSocket.recv(1025)
    # Fill in start
 data = "DATA\r\n"
 clientSocket.send(data.encode())
-recv4 = clientSocket.recv(1025)
+recv4 = clientSocket.recv(1024).decode()
 #print(recv4)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
@@ -70,7 +70,7 @@ clientSocket.send(msg.encode())
 clientSocket.send(endmsg.encode())
    # Fill in start
 
-recv_msg = clientSocket.recv(1025)
+recv_msg = clientSocket.recv(1024).decode()
 #print(recv_msg.decode())
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
@@ -85,7 +85,7 @@ recv_msg = clientSocket.recv(1025)
    # Send QUIT command and get server response.
    # Fill in start
 clientSocket.send("QUIT\r\n".encode())
-message = clientSocket.recv(1025)
+message = clientSocket.recv(1024)
 #print(message)
 clientSocket.close()
    # Fill in end
