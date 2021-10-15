@@ -89,7 +89,6 @@ message = clientSocket.recv(1024)
 #print(message)
 clientSocket.close()
    # Fill in end
-if __name__ == '__main__':
-   (1025, '127.0.0.1')
+
 
 
