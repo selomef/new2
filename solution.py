@@ -20,7 +20,7 @@ clientSocket.connect(('127.0.0.1', 1025))
 
    # Fill in end
 
-recv = clientSocket.recv(1024)
+recv = clientSocket.recv(1024).decode()
 #print(recv)
 #if recv[:3] != '220':
        #print('220 reply not received from server.')
