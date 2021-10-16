@@ -5,8 +5,9 @@ from socket import AF_INET, SOCK_STREAM
 
 msg = "\r\n My message"
 endmsg = "\r\n.\r\n"
+def smtp_client(port=1025, mailserver='127.0.0.1'):
 
-mailserver = ('127.0.0.1', 1025)
+  mailserver = ('127.0.0.1', 1025)
 
    # Choose a mail server (e.g. Google mail server) if you want to verify the script beyond GradeScope
 
@@ -49,7 +50,7 @@ recv2 = clientSocket.recv(1024).decode()
 rcptTo = "RCPT TO: <selomef@gmail.com>\r\n"
 clientSocket.send(rcptTo.encode())
 recv3 = clientSocket.recv(1024).decode()
-#print(recv3)
+print(recv3)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
 
@@ -60,7 +61,7 @@ recv3 = clientSocket.recv(1024).decode()
 data = "DATA\r\n"
 clientSocket.send(data.encode())
 recv4 = clientSocket.recv(1024).decode()
-#print(recv4)
+print(recv4)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
    # Fill in end
@@ -89,6 +90,8 @@ message = clientSocket.recv(1024)
 #print(message)
 clientSocket.close()
    # Fill in end
+
+
 
 
 
