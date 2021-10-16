@@ -61,7 +61,7 @@ print(recv3)
 data = "DATA\r\n"
 clientSocket.send(data.encode())
 recv4 = clientSocket.recv(1024).decode()
-print(recv4)
+#print(recv4)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
    # Fill in end
