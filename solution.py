@@ -50,7 +50,7 @@ recv2 = clientSocket.recv(1024).decode()
 rcptTo = "RCPT TO: <selomef@gmail.com>\r\n"
 clientSocket.send(rcptTo.encode())
 recv3 = clientSocket.recv(1024).decode()
-print(recv3)
+#print(recv3)
 #if recv1[:3] != '250':
     #print('250 reply not received from server.')
 
